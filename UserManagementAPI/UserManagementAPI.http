@@ -1,0 +1,42 @@
+@UserManagementAPI_HostAddress = http://localhost:5052
+@AuthToken = dev-token
+
+### Get all users
+GET {{UserManagementAPI_HostAddress}}/api/users
+Authorization: Bearer {{AuthToken}}
+Accept: application/json
+
+### Get user by id
+GET {{UserManagementAPI_HostAddress}}/api/users/1
+Authorization: Bearer {{AuthToken}}
+Accept: application/json
+
+### Create user
+POST {{UserManagementAPI_HostAddress}}/api/users
+Authorization: Bearer {{AuthToken}}
+Content-Type: application/json
+
+{
+  "firstName": "Grace",
+  "lastName": "Hopper",
+  "email": "grace.hopper@example.com"
+}
+
+### Update user
+PUT {{UserManagementAPI_HostAddress}}/api/users/1
+Authorization: Bearer {{AuthToken}}
+Content-Type: application/json
+
+{
+  "firstName": "Ada",
+  "lastName": "Lovelace",
+  "email": "ada.new@example.com"
+}
+
+### Delete user
+DELETE {{UserManagementAPI_HostAddress}}/api/users/2
+Authorization: Bearer {{AuthToken}}
+
+### Health check
+GET {{UserManagementAPI_HostAddress}}/health
+Authorization: Bearer {{AuthToken}}
